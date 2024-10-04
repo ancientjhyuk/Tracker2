@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#add-reservation">Add Reservation</a></li>
+            <li><a href="#reservation-list">Reservation List</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="add-reservation">
+            <h1>Add Reservation</h1>
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="transactionType">Type of Transaction:</label>
+                    <select id="transactionType" required>
+                        <option value="">Select Type</option>
+                        <option value="Email">Email</option>
+                        <option value="Inbound">Inbound</option>
+                        <option value="Outbound">Outbound</option>
+                        <option value="Queues">Queues</option>
+                        <option value="Client base">Client base</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ticketNumber">Optional Ticket Number:</label>
+                    <input type="text" id="ticketNumber" placeholder="Enter Ticket Number (optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="routeType">Route Type:</label>
+                    <select id="routeType" required>
+                        <option value="">Select Type</option>
+                        <option value="Domestic">Domestic</option>
+                        <option value="International">International</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="airportCode">Airport Code:</label>
+                    <input type="text" id="airportCode" required placeholder="Enter Airport Code">
+                </div>
+
+                <div class="form-group">
+                    <label for="tagging">Tagging:</label>
+                    <select id="tagging" required>
+                        <option value="">Select Tagging</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Solved">Solved</option>
+                        <option value="Queue Actioned">Queue Actioned</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="icName">IC Name:</label>
+                    <input type="text" id="icName" required placeholder="Enter IC Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="pnr">Optional PNR:</label>
+                    <input type="text" id="pnr" placeholder="Enter PNR (optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" required placeholder="Enter Description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="urgency">Urgency:</label>
+                    <select id="urgency" required>
+                        <option value="">Select Urgency</option>
+                        <option value="nonUrgent">Non-Urgent</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+
+                <button type="submit">Add Reservation</button>
+            </form>
+        </section>
+
+        <section id="reservation-list">
+            <h1>Reservation List</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Timestamp</th>
+                        <th>Type of Transaction</th>
+                        <th>Optional Ticket Number</th>
+                        <th>Route Type</th>
+                        <th>Airport Code</th>
+                        <th>Tagging</th>
+                        <th>IC Name</th>
+                        <th>Optional PNR</th>
+                        <th>Description</th>
+                        <th>Urgency</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="reservationTableBody"></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
